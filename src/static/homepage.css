@@ -1,0 +1,109 @@
+section{
+	background-color: black;
+	width:  100%;
+	height: 90vh;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.section-one{
+	position: relative;
+	top: 10vh;
+}
+
+.carousel-items{
+    display: flex;
+}
+
+.corousel-items img{
+	width: 100%;
+	height: 100%;
+}
+
+.carousel-inner{
+	width: 300%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.b-carousel-item{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+#prevbtn{
+    position: absolute;
+    left: 10px;
+    top: 30vh;
+    cursor: pointer;
+    font-size: 28px;
+    border-style: none;
+    outline: none;
+    background: none;
+    font-weight: bolder;
+    color: white;
+}
+
+#nxtbtn{
+    position: absolute;
+    top: 30vh;
+    right: 10px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bolder;
+    border-style: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+
+.second-section{
+	background-color: black;
+	height: 90vh;
+}
+
+.third-section{
+	width: 100%;
+	background-color: white;
+	height: 70vh; 
+}
+
+.services-cards{
+	margin: 10px;
+	height: auto;
+	width: 100%;
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: repeat(auto-fit, 295px);
+	-ms-grid-template-coumns: repeat(auto-fit, 295px);
+	grid-gap: 50px;
+	grid-template-rows: 3;
+	-ms-grid-template-rows: 3;
+}
+
+.services-cards .card{
+	cursor: pointer;
+}
+
+.modal-section{
+	width: 100%;
+	height: 90vh;
+	position: absolute;
+	top: 10vh;
+	visibility: hidden;
+	transition: .2s ease-in-out;
+	background-color: black;
+}
+
+.open-modal{
+	visibility: visible;
+	opacity: 1;
+}
+
+.spinner{
+}

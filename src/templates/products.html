@@ -1,0 +1,110 @@
+{% extends 'public/main.html'%}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='products.css')}}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock head %}
+
+{% block body %}
+<div class="products">
+	<div class="add-products">
+		{% with messages=get_flashed_messages(with_categories=true)%}
+			{% if messages%}
+				{% for category, message in messages %}
+					<div class="alert alert-{{category}}">
+						{{message}}
+					</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<h3>Add products</h3>
+		<form method="POST" enctype="multipart/form-data">
+		  <div class="form-row">
+			<div class="form-group">
+			  <label for="inputEmail4">Product name</label>
+			  <input type="Text" class="form-control" id="inputEmail4" placeholder="product name" autocomplete="off" name="name"> 
+			</div>
+			<div class="form-group">
+			  <label for="price">Product price</label>
+			  <input type="number" class="form-control" id="price" placeholder="product price" autocomplete="off" name="price">
+			</div>
+			<div class="form-group">
+			  <label for="price">Product quantity</label>
+			  <input type="number" class="form-control" id="quantity" placeholder="product quantity" autocomplete="off" name="quantity">
+			</div>
+		  </div>
+		  <div class="form-row">
+			<div class="form-group">
+			  <label for="category">Category</label>
+			  <select id="inputState" class="form-control" name="category">
+				<option selected>Select product Category</option>
+				<option>Electronics</option>
+				<option>Fashion</option>
+				<option>Toys and kids</option>
+				<option>Stationary</option>
+			  </select>
+			</div>
+			<div class="form-group">
+				<label for="Description">Product Details and description</label>
+				<textarea class="form-control form-control-sm" rows=10 namme="description"></textarea>
+			</div>
+			
+			<div class="form-group">
+			  <label for="inputZip">choose product image</label>
+			  <input type="file" class="form-control" name="image">
+			</div>
+		  </div>
+		  <br/>
+		  <button type="submit" class="btn btn-danger btn-sm">Add Product</button>
+		</form>
+	</div>
+	<div>
+		<h3>Manage Products</h3>
+		<div class="table-responsive w-100">
+			<table class="table">
+				<caption>Easily edit and delete product details here</caption>
+				<thead>
+					<tr>
+					<th scope="col">product id</th>
+					<th scope="col">name</th>
+					<th scope="col">price</th>
+					<th scope="col">views</th>
+					<th scope="col">Delete</th>
+					<th scope="col">Edit</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Hoodies</td>
+						<td>1500</td>
+						<td>10</td>
+						<td><i class="fa fa-trash"></i></td>
+						<td><i class="fa fa-pencil"></i></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Black shoes</td>
+						<td>10000</td>
+						<td>5</td>
+						<td><i class="fa fa-trash"></i></td>
+						<td><i class="fa fa-pencil"></i></td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Yellow hoodies</td>
+						<td>15000</td>
+						<td>3</td>
+						<td><i class="fa fa-trash"></i></td>
+						<td><i class="fa fa-pencil"></i></td>
+					</tr>
+				</tbody>
+			</table>
+		  </div>
+	</div>
+	
+</div>
+{% endblock body%}
+
+{% block scripts%}
+
+{% endblock scripts%}

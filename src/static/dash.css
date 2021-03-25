@@ -1,0 +1,111 @@
+section{
+	min-height: 90vh;
+	width: 100%;
+	display: flex;
+}
+
+.dash-sect{
+	margin-top: 10vh;
+}
+
+.user-info{
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	background-color: indigo; 
+}
+
+.accordion{
+	padding: 2px !important;
+	color: white;
+	margin: 0px !important;
+}
+
+.accordion-header{
+	outline: none;
+}
+
+.accordion a{
+	text-decoration: none;
+	color: white;
+}
+
+.user-profile{
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	border-radius: 50px;
+}
+
+.user-profile img{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+.services{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-dash{
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: repeat(auto-fit, 350px);
+        -ms-grid-template-coumns: repeat(auto-fit, 350px);
+        grid-gap: 1px;
+        grid-template-rows: 5;
+        -ms-grid-template-rows: 5;
+}
+
+.services .card{
+	background-color: white;
+	box-shadow: 0 0 0 1px rgba(8, 9, 10, 0.05);
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    height: auto;
+}
+
+.main-dash .Amount{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.customer -responses{
+	display: flex;
+	width: 100%;
+}
+
+.responses{
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: repeat(auto-fit, 525px);
+	-ms-grid-template-coumns: repeat(auto-fit, 525px);
+	grid-gap: 1px;
+	grid-template-rows: 5;
+	-ms-grid-template-rows: 5;
+}
+
+.card table{
+    border-collapse: collapse;
+    min-width: auto;
+    margin: 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.card thead{
+	background-color: rgb(207, 207, 207);
+	font-weight: 200;
+	text-transform: capitalize;
+}
+.card td{
+    padding: 5px;
+}
+
+.card tbody tr{
+    border-bottom: 1px solid #dddddd;
+}

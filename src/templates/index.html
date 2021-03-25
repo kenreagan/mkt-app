@@ -1,0 +1,37 @@
+{% extends 'public/main.html' %}
+
+{% block head%}
+
+{% endblock head%}
+
+{% block body%}
+<section class="products-body">
+	<div>
+		{% with messages=get_flashed_messages(with_categories=true)%}
+		{% if messages%}
+			{% for category, message in messages%}
+				<div class="alert alert-{{category}}">
+					{{message}}
+				</div>
+			{% endfor%}
+		{% endif %}
+		{%endwith%}
+	</div>
+	<div class="home-section">
+		{% for products in prod %}
+		<div class="Icard">
+			<a href="{{url_for('src.views.eachproduct', id=products.id)}}">
+				<span>
+					<img src="{{url_for('static', filename='images/'+products.path)}}" class="w-100 h-100">
+				</span>
+			</a>
+			<a href="" class="btn btn-primary btn-sm w-100">{{products.price}}</a>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+{% endblock body%}
+
+{% block scripts%}
+
+{% endblock scripts%}

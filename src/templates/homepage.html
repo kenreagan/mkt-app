@@ -1,0 +1,161 @@
+{% extends 'public/main.html' %}
+
+{% block head%}
+<noscript>You must enable java scripty in your browser in oredr to access this website</noscript>
+<link rel="stylesheet" href="{{url_for('static', filename='homepage.css')}}">
+{% endblock head%}
+
+{% block body%}
+<section class="section-one">
+  <div class="carousel-items">
+      <img src="{{url_for('static', filename='three.jpg')}}" alt="" id="lastelement">
+      <img src="{{url_for('static', filename='one.jpg')}}">
+      <img src="{{url_for('static', filename='two.jpg')}}" >
+      <img src="{{url_for('static', filename='three.jpg')}}">
+      <img src="{{url_for('static', filename='one.jpg')}}" alt="" id="firstelement">
+  </div>
+  <button id="prevbtn">&lt;</button>
+  <button id="nxtbtn">&gt;</button>
+ </section>
+ <section class="second-section">
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+		  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+		  <div class="b-carousel-item active">
+			<p class="text text-light">First slide</p>
+		  </div>
+		  <div class="b-carousel-item">
+			<p class="text text-light">Second slide</p>
+		  </div>
+		  <div class="b-carousel-item">
+			<p class="text text-light">Third slide</p>
+		  </div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </div>
+ </section>
+ 
+ <section class="third-section">
+	 <div class="services-cards">
+	 <!-- this sdection holds the rates that the company charges they should be in the form of cards -->
+		 <div class="card">
+			 <div class="card-header">
+				 <h6 class="text text-danger">Basic Plan</h6>
+			 </div>
+			 <div class="card-body">
+				 <p>choose the basic plan and advertise to a maximum of 20 products</p>
+				 <ul>
+					 <li><p>Assured customers</p></li>
+					 <li><p>Access to the dashboard</p></li>
+					 <li><p>Advertisement in different websites</p></li>
+				 </ul>
+			 </div>
+			 <div class="card-footer">
+				 <button class="btn btn-success w-100"><span class="text text-light">ksh 500</span></button>
+			 </div>
+		 </div>
+		 
+		 <div class="card">
+			 <div class="card-header">
+				 <h6 class="text text-danger">Intermediate Plan</h6>
+			 </div>
+			 <div class="card-body">
+				 <p>choose the basic plan and advertise to a maximum of 20 products</p>
+				 <ul>
+					 					 <li>
+						 <p>maximum of 200 products to advertise</p>
+					 </li>
+					 <li>
+						 <p>Adminstrator dashboard for products control</p>
+					 </li>
+					 <li>
+						 <p>Consistent advertising in different websites</p>
+					 </li>
+					<li>
+						 <p>Continuous Customers</p>
+					 </li>
+				 </ul>
+			 </div>
+			 <div class="card-footer">
+				 <button class="btn btn-success w-100"><span class="text text-light">ksh 6000</span></button>
+			 </div>
+		 </div>
+		 
+		 <div class="card">
+			 <div class="card-header">
+				 <h6 class="text text-danger">Premium ultimate Plan</h6>
+			 </div>
+			 <div class="card-body">
+				 <p>The professional plan caters for all your advertising needs</p>
+				 <ul>
+					 <li>
+						 <p>maximum of 200 products to advertise</p>
+					 </li>
+					 <li>
+						 <p>Adminstrator dashboard for products control</p>
+					 </li>
+					 <li>
+						 <p>Consistent advertising in different websites</p>
+					 </li>
+					<li>
+						 <p>Being  Ranked among top companies</p>
+					 </li>
+					<li>
+						 <p>Continuous Customers</p>
+					 </li>
+				 </ul>
+			 </div>
+			 <div class="card-footer">
+				<button class="btn btn-success w-100"><span class="text text-light">ksh 10000</span></button>
+			 </div>
+		 </div>
+		 
+		 <div class="card">
+			 <div class="card-header">
+				 <h6 class="text text-danger">Premium ultimate Plan</h6>
+			 </div>
+			 <div class="card-body">
+				 <p>The professional plan caters for all your advertising needs</p>
+				 <ul>
+					 <li>
+						 <p>maximum of 500 products to advertise</p>
+					 </li>
+					 <li>
+						 <p>Adminstrator dashboard for products control</p>
+					 </li>
+					 <li>
+						 <p>Consistent advertising in different websites</p>
+					 </li>
+					<li>
+						 <p>Being  Ranked among top companies</p>
+					 </li>
+					<li>
+						 <p>Continuous Customers</p>
+					 </li>
+				 </ul>
+			 </div>
+			 <div class="card-footer">
+				 <button class="btn btn-success w-100"><span class="text text-light">ksh 30000</span></button>
+			 </div>
+		 </div>
+		 </div>
+ </section>
+ <section class="modal-section">
+	 <div class="modal-item">
+	 </div>
+ </section>
+{% endblock body%}
+{% block scripts%}
+<script src="{{url_for('static', filename='js/homepage.js')}}"></script>
+{% endblock scripts%}

@@ -1,0 +1,17 @@
+# virtual environment should not be added to the repository
+venv/
+
+__pycache__/
+
+*.pyc
+
+# database files should not be added on the repository
+*.sqlite
+# configuration files should be stored on local machine
+*.env
+
+*.swap
+
+#images 
+src/static/images/
+

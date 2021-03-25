@@ -1,0 +1,58 @@
+{% extends 'public/main.html'%}
+		{% block head%}
+			<link rel="stylesheet" href="{{url_for('static', filename='login.css')}}"/>
+		{% endblock head%}
+
+
+{% block body%}
+<section class="login-form">
+    <h4 class="text text-capitalize">register for an account</h4>
+       {% with messages=get_flashed_messages(with_categories=true)%}
+			{% if messages%}
+				{% for category, message in messages%}
+					<div class="alert alert-{{category}}">
+						{{message}}
+					</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	<div class="Icard">
+		<form method="POST">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="first name">first name</label>
+				  <input type="text" class="form-control" id="first name" placeholder="first name" autocomplete="off" name="firstname">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="last name">last name</label>
+				  <input type="text" class="form-control" id="lastname" placeholder="last name" autocomplete="off" name="lastname">
+				</div>
+			</div>
+			<div class="form-row">
+			  <div class="form-group col-md-6">
+				<label for="inputEmail4">Email</label>
+				<input type="email" class="form-control" id="inputEmail4" placeholder="Email" autocomplete="off" name=email>
+			  </div>
+			  <div class="form-group col-md-6">
+				<label for="inputPassword4">Password</label>
+				<input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="inputAddress2">Phone number</label>
+			  <input type="text" class="form-control" id="inputAddress2" placeholder="enter your phone number" name="phone">
+			</div>
+			<div class="form-group">
+			  <div class="form-check">
+				<input class="form-check-input" type="checkbox" id="gridCheck">
+				<label class="form-check-label" for="gridCheck">
+				  Agree to the terms and conditions
+				</label>
+			  </div>
+			</div>
+			<button type="submit" class="btn btn-warning">Sign in</button>
+		  </form>
+		<small>Already have an account ? <a href="{{url_for('src.views.login')}}">Login</a><small>
+	</div>
+</section>
+{%endblock body%}

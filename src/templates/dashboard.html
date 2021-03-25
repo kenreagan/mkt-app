@@ -1,0 +1,175 @@
+{% extends 'public/main.html'%}
+{% block head%}
+	<link rel="stylesheet" href="{{url_for('static', filename='dash.css')}}">
+{% endblock head%}
+
+{% block body%}
+<section class="dash-sect">
+	<div class="user-info">
+		<div class="user-profile">
+			<img src="{{url_for('static', filename='test.jpeg')}}">
+		</div>	
+		<h6 class="text text-light">Main menu</h6>
+		<div class="accordion w-100" id="accordionExample">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingOne">
+				<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				<h6 class="text text-light">{{current_user.email}}</h6>
+				</button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+				<div class="accordion-body">
+					<ul>
+						<li><p>Basic plan</p></li>
+						<li><p>Messages on your products</p></li>
+						<li><p>Reviews from clients</p></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingTwo">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					<h6 class="text text-light">Your products</h6>
+				</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<ul>
+							<li><p>Products Available  <span>10</span></p></li>
+							<li><p>Total products allowed to advetise  50</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+			<h2 class="accordion-header" id="headingThree">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				<h6 class="text text-light">Manage products</h6>
+				</button>
+			</h2>
+			<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<ul>
+				<li><a href="{{url_for('src.views.addProducts', email=current_user.email)}}">Add products</a></li>
+				<li><a href="">Delete Products</a></li>
+				<li><a href="">Edit products</a></li>
+				</ul>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="services">
+			<div class=" container main-dash">
+			<div class="card">
+			<h6 class="text text-muted text-capitalize">Total products Available</h6>
+				<div class="Amount">
+					<p class="text text-success font-weight-bolder display-4">500</p>
+				</div>
+			</div>
+			<div class="card">
+				<h6 class="text text-muted text-capitalize">Total products sold</h6>
+				<div class="Amount">
+					<p class="text text-success font-weight-bolder display-4">300</emailp>
+				</div>
+			</div>
+			<div class="card">
+				<h6 class="text text-muted text-capitalize">Total Amount from sales</h6>
+				<div class="Amount">
+					<p class="text text-success font-weight-bolder display-4">$ 3456790</p>
+				</div>
+			</div>
+			</div>
+			<div class="customer -responses container">
+			<div class="responses">
+			<div class="card">
+				<h4>Customer responses</h4>
+				<table>
+						<thead>
+							<tr>
+								<td>id</td>
+								<td>first name</td>
+								<td>last name</td>
+								<td>product id</td>
+								<td>rating</td>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in range(10)%}
+							<tr>
+								<td>
+									<p>{{i}}</p>
+								</td>
+								<td>
+									<p>Lumuli</p>
+								</td>
+									<td>
+									<p>ken</p>
+								</td>
+									<td>
+									<p>10</p>
+								</td>
+									<td>
+									<p>Negative</p>
+								</td>
+							</tr>
+							{% endfor%}
+						</tbody>
+					</table>
+			</div>
+			<div class="card">
+				<h4>Charts</h4>
+			</div>
+			<div class="card">
+				<h4>Monitor users</h4>
+				<table>
+					<thead>
+						<tr>
+							<td>Email</td>
+							<td>Last seen</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>lumulikenreagan@gmail.com</td>
+							<td>10 minutes ago</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="card">
+				<h4>Starred chats</h4>
+				<div class="list-group">
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">List group item heading</h5>
+						<small>3 days ago</small>
+					</div>
+					<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+					<small>Donec id elit non mi porta.</small>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">List group item heading</h5>
+						<small class="text-muted">3 days ago</small>
+					</div>
+					<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+					<small class="text-muted">Donec id elit non mi porta.</small>
+					</a>
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">List group item heading</h5>
+						<small class="text-muted">3 days ago</small>
+					</div>
+					<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+					<small class="text-muted">Donec id elit non mi porta.</small>
+					</a>
+				</div>
+				<button class="btn btn-info btn-sm w-100">Load more ...</button>
+			</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock body%}

@@ -1,0 +1,73 @@
+.login-form{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form .Icard{
+    border-radius: 2px;
+    padding: 10px;
+    width: 50%;
+    height: 70%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.form-row{
+    display: flex !important;
+    width: 100%;
+}
+
+.login-form .form{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.login-form .form input{
+    /*padding-bottom: 5px;*/
+    position: absolute;
+    width: 100%;
+    padding-top: 25px;
+    border: none;
+    outline: none;
+}
+
+.login-form .form label{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -12px;
+    left: 0px;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.form .label-details{
+    position: absolute;
+    bottom: -2px;
+    transition: 1s ease-in-out;
+}
+
+.form input:focus + label .label-details, .form input:valid + label .label-details{
+    transform: translateY(-170%);
+    transition: 0.3s ease-in-out;
+}
+
+
+.login-form input[type="submit"]{
+    margin-top: 20px;
+    padding: 5px;
+    height: 40%;
+    border-radius: 2px;
+    width: 100%;
+    border-style: none;
+    background-color: orange;
+    cursor: pointer;
+    outline: none;
+}

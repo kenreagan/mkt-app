@@ -1,0 +1,16 @@
+{% extends 'public/main.html'%}
+
+{% block head %}
+
+{% endblock head %}
+
+{% block body %}
+    <div class="container">
+        <div class="card">
+            <img src="{{url_for('static', filename='images/'+ product.name)}}" alt="">
+        </div>
+    </div>
+{% endblock body %}
+
+{% block scripts %}
+{% endblock scripts%}
